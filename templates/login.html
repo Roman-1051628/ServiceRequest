@@ -1,0 +1,40 @@
+<html>
+<head>
+    <title>Problem Page</title>
+    <link rel="stylesheet" href="/static/login.css">
+    <link rel='stylesheet' href="{{ url_for('static', filename='stylesheet.css' )}}">
+    <nav class="navbar">
+        
+        <ul class="nav-links">
+            <li class="nav-item"><a href="/"><img src="https://www.test-correct.nl/hubfs/raw_assets/public/test-correct/images/testcorrect-logo.svg" class="logo"></a></li>
+        </ul> 
+    </nav>    
+</head>
+<body>
+    <div id="div">
+      <article class="login_menu">  
+        <form class="form" method="POST">
+          <article>
+            <h2 class="error_noti">{{ error }}</h2>
+          </article>
+          <article class="form_field">
+            <label for="username" class="login_label">Gebruikersnaam:</label>
+            <br>
+            <input type="text" name="username" class="login_input">
+          </article>
+          <article class="form_field">
+            <label for="password" class="login_label">Wachtwoord:</label>
+            <br>
+            <input type="password" name="password" class="login_input">
+          </article>  
+          <article>
+            <input class="login_button" type="submit" value="Log-in">
+          </article>
+          
+          
+        </form>
+        
+      </article>
+    </div>
+</body>
+</html>

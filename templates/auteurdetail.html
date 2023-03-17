@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <link rel='stylesheet' href="{{ url_for('static', filename='stylesheetdetail.css')}}">
+        <nav class="navbar">
+            
+            <ul class="nav-links">
+                <li class="nav-item"><a href="/"><img src="https://www.test-correct.nl/hubfs/raw_assets/public/test-correct/images/testcorrect-logo.svg" class="logo"></a></li>
+                <li class="nav-item"><a href="/dashboard">Dashboard</a></li>
+                <li class="nav-item"><a href="/filtering/vragen">Vragen</a></li>
+                <li class="nav-item"><a href="/filtering/leerdoelen">Leerdoelen</a></li>
+                <li class="nav-item"><a href="/filtering/auteurs">Auteurs</a></li>
+                <li class="nav-item"><a id="logout" href="/filtering/logout">Log uit</a></li>
+            </ul>  
+        </nav> 
+    </head>
+    <body>
+    <form class="main_field" action="{{ url_for('auteur_aanpassen') }}" method="post">
+        {% if table == vragen:%}
+            {% for post in posts%}
+                <article class="leerdoel_field">
+                    <p class="id_field">ID: {{ post[0] }}</p>
+                    <input name="id" class="input_field" type="hidden" value="{{ post[0] }}">
+                </article>
+                <article class="leerdoel_field">
+                    <p>Voornaam: </p>
+                    <input class="input_field" name="voornaam" type="text" value="{{ post[1] }}">
+                </article>
+                <article class="leerdoel_field">
+                    <p>Achternaam: </p>
+                    <input class="input_field" name="achternaam" value="{{ post[2] }}"></input>
+                </article>
+                <article class="leerdoel_field">
+                    <p> Geboortejaar: </p>
+                    <input class="input_field" type="text" name="geboortejaar" value="{{ post[3] }}">
+                </article>
+                <article class="leerdoel_field">
+                    <p> Medewerker: </p>
+                    <input class="input_field" type="text" name="medewerker" value="{{ post[4] }}">
+                </article>
+                <article class="leerdoel_field">
+                    <p> Met pensioen: </p>
+                    <input class="input_field" type="text" name="pensioen" value="{{ post[5] }}">
+                </article>
+                <br><br>
+                <input type="submit" value="Update auteur" class="update_button">
+
+            {% endfor %}
+        {% elif table == auteurs:%}
+            {% for post in posts %}
+                <tr>
+                    <td>{{ post[0] }}</td>
+                    <td>{{ post[1] }}</td>
+                    <td>{{ post[2] }}</td>
+                    <td>{{ post[3] }}</td>
+                    <td>{{ post[4] }}</td>
+                    <td>{{ post[5] }}</td>
+                </tr>
+            {% endfor %}
+        {% endif %}
+    </form>    
+    </body>
+</html>

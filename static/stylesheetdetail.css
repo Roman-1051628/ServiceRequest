@@ -1,0 +1,132 @@
+
+nav {
+    background-color: white;
+    height: top;
+    margin: 0px;
+    box-shadow: 0px 1px 8px black;
+}
+.nav-links {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+  }
+
+#logout{
+    border: 2px solid black;
+    background: red;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+}
+#logout:hover{
+    transition: 100ms ease-in;
+    box-shadow: 3px 3px 5px black;
+}
+
+.nav-item {
+    color: #041f74;
+    font-family: Nunito,sans-serif;
+    font-size: 18px;
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.33;
+    list-style: none;
+    margin-right: 2rem;
+}
+.nav-item a{
+    text-decoration: none;
+}
+.nav-item a:hover{
+   
+    transition: 100ms ease-in-out;
+    font-size: 19px;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+}
+
+body{
+    background-color: rgba(0, 157, 255, 0.156);
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+head{
+    margin: 0px;
+    padding: 0px;
+}
+
+.nav-item:first-child{
+    margin-right: auto;
+}
+
+.main_field{
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.main_field > input{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.question_field{
+    display: flex;
+    flex-wrap: wrap;
+    width: 60vw;
+    height: 20vh;
+    margin: 10px;
+    resize: none;
+    border: 1px solid black;
+    border-radius: 5px;
+
+}
+
+.leerdoel_field{
+    margin-left: 10px;
+    display: flex;
+    max-height: 30px;
+}
+
+.leerdoel_field > input{
+    box-sizing: content-box;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-top: auto;
+    margin-left: 5px;
+}
+
+.leerdoel_field > p{
+    margin-top: 1%;
+}
+
+.id_field{
+    border: none;
+ 
+}
+
+.update_button{
+    border: none;
+    border-radius: 10px;
+    color: white;
+    background-color: #004df5;
+    padding-left: 17px;
+    padding-right: 17px;
+    min-height: 40px;
+    margin: 10px;
+}
+.update_button:hover{
+    box-shadow: 0px 2px 5px black;
+    border: 2px solid black;
+}
+
+.test{
+    color: red;
+    font-size: 30px;
+}

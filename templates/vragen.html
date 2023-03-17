@@ -1,0 +1,93 @@
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='table2csv.min.js')}}"></script>
+    <link rel='stylesheet' href="{{ url_for('static', filename='stylesheet.css')}}">
+    <nav class="navbar">
+        
+        <ul class="nav-links">
+            <li class="nav-item"><a href="/"><img src="https://www.test-correct.nl/hubfs/raw_assets/public/test-correct/images/testcorrect-logo.svg" class="logo"></a></li>
+            <li class="nav-item"><a href="/dashboard">Dashboard</a></li>
+            <li class="nav-item"><a href="/filtering/vragen">Vragen</a></li>
+            <li class="nav-item"><a href="/filtering/leerdoelen">Leerdoelen</a></li>
+            <li class="nav-item"><a href="/filtering/auteurs">Auteurs</a></li>
+            <li class="nav-item"><a id="logout" href="/filtering/logout">Log uit</a></li>
+        </ul>  
+    </nav>   
+</head>
+<body>
+    
+    <form class="form" method="POST" action="{{ url_for('filteren') }}">
+        <h2 class="filter_label">ID range instellen</h2>
+        <article class="range_filter">
+            <input type="text" class="range_input" name="minimum">
+            <p class="range_marker">tot aan</p>
+            <input type="text" class="range_input" name="maximum">
+            <h4 class="error">{{ error }}</h4>
+        </article>
+        <ul class="filter_knop_nav">
+            <li><input class="filter_knop" name="action" type="submit" value="Typ fouten"></input></li>
+            <li><input class="filter_knop" name="action" type="submit" value="Niet bestaande auteurs"></input></li>
+            <li><input class="filter_knop" name="action" type="submit" value="Niet bestaande leerdoelen"></input></li>
+            <li><input class="filter_knop" name="action" type="submit" value="Lege vakjes"></input></li>
+            <li><a class="filter_knop_cvs" onclick="return downloadcsv()">Export CVS</a></li>
+        </ul>
+    </form>
+        
+            
+           
+    
+<table id="csvtable">
+    <thead>  
+        {% if check == "('True',)" %}
+        <tr>
+            <th>ID</th>
+            <th>Leerdoel</th>
+            <th>Vraag</th>
+            <th>Auteur</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for post in posts %}
+        <tr>
+            <form action="{{ url_for('vraagdetail') }}" method="post">
+            <input type="hidden" name="id" value="{{ post[0] }}">
+            <input type="hidden" name="table" value="vragen">
+            <td>{{ post[0] }}</td>
+            <td>{{ post[1] }}</td>
+            <td>{{ post[2] }}</td>
+            <td>{{ post[3] }}</td>
+            <td id="centerbtn"><input id="changebtn" type="submit" value="Aanpassen"></td>
+            </form>
+        </tr>
+        {% endfor %}
+    </tbody>
+        {% else %}
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Leerdoel</th>
+            <th>Vraag</th>
+            <th>Auteur</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for post in posts %}
+        <tr>
+            <td>{{ post[0] }}</td>
+            <td>{{ post[1] }}</td>
+            <td>{{ post[2] }}</td>
+            <td>{{ post[3] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+        {% endif %}
+</table>
+<script>
+    function downloadcsv(){
+        $("table").table2csv(); 
+    }
+</script>
+</body>
+</html>

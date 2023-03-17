@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <link rel='stylesheet' href="{{ url_for('static', filename='stylesheetdetail.css')}}">
+        <nav class="navbar">
+        
+            <ul class="nav-links">
+                <li class="nav-item"><a href="/"><img src="https://www.test-correct.nl/hubfs/raw_assets/public/test-correct/images/testcorrect-logo.svg" class="logo"></a></li>
+                <li class="nav-item"><a href="/dashboard">Dashboard</a></li>
+                <li class="nav-item"><a href="/filtering/vragen">Vragen</a></li>
+                <li class="nav-item"><a href="/filtering/leerdoelen">Leerdoelen</a></li>
+                <li class="nav-item"><a href="/filtering/auteurs">Auteurs</a></li>
+                <li class="nav-item"><a id="logout" href="/filtering/logout">Log uit</a></li>
+            </ul>  
+        </nav>   
+    </head>
+    <body>
+    <form class="main_field" action="{{ url_for('vraag_aanpassen') }}" method="post">
+        {% if table == vragen:%}
+            {% for post in posts%}
+                <article class="leerdoel_field">
+                    <p class="id_field">ID: {{ post[0] }}</p>
+                    <input name="id" class="input_field" type="hidden" value="{{ post[0] }}">
+                </article>
+                <article class="leerdoel_field">
+                    <p>Leerdoel: </p>
+                    <select name="leerdoel" value="{{ post[1] }}">
+                        <option value="{{ post[1] }}">Geen verandering</option>
+                        <option value="1">Onthouden</option>
+                        <option value="2">Begrijpen</option>
+                        <option value="3">Toepassen</option>
+                        <option value="4">Analyseren</option>
+                        <option value="5">Evalueren</option>
+                        <option value="6">Creëren</option>
+                        <option value="7">Reproductie</option>
+                    </select>
+                </article>
+                <textarea class="question_field" name="question">{{ post[2] }}</textarea>
+                <article class="leerdoel_field">
+                    <p> Auteur: </p>
+                    <select name="auteur" value="{{ post[3] }}">
+                        <option value="{{ post[3] }}">Geen verandering</option>
+                        <option value="1">Samuel Jackson</option>
+                        <option value="2">Bruce Willis</option>
+                        <option value="3">Robert de Niro</option>
+                        <option value="4">Brad Pitt</option>
+                        <option value="5">John Thomson</option>
+                        <option value="6">Maikel Kastanje</option>
+                        <option value="7">Brody Koops</option>
+                        <option value="8">Henry Ford</option>
+                        <option value="9">Kees Barst</option>
+                        <option value="10">Caroline Hubert</option>
+                        <option value="11">Tina Aaltje</option>
+                        <option value="12">Aaron Paul</option>
+                        <option value="13">Mena Mastrionie</option>
+                        <option value="14">Mark Otting</option>
+                        <option value="15">Alex Karlas</option>
+                        <option value="16">Jeroen Bet</option>
+                        <option value="17">Tim Splinter</option>
+                    </select>
+                </article> <br><br>
+                <input type="submit" value="Update vraag" class="update_button" onclick="return status()">
+            {% endfor %}
+        {% elif table == auteurs:%}
+            {% for post in posts %}
+                <tr>
+                    <td>{{ post[0] }}</td>
+                    <td>{{ post[1] }}</td>
+                    <td>{{ post[2] }}</td>
+                    <td>{{ post[3] }}</td>
+                </tr>
+            {% endfor %}
+        {% endif %}
+    </form>
+    <script>
+        function status(){
+            return confirm('Wil je dit aanpassen?');
+            } 
+       
+    </script>
+    </body>
+</html>
