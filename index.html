@@ -1,0 +1,92 @@
+<DOCTYPE html>
+<html lang="en">
+    <head>
+       <title>dEP-Service</title> 
+       <link rel="stylesheet" href="styles2.css">
+       
+       <link rel="icon" type="image/x-icon" href="favicon.ico">
+    </head>
+    <body>
+  <br>
+
+
+        <script src="main.js"></script>
+        <div id="bg">
+        </div>
+        
+        <form action="connect.php" method="POST">
+            <div class="fillIn">                 
+                        <table class="inputtable">
+                            <tr>
+                                <td>
+                                    <label for="fullName" id="fullNameLabel">Naam:</label><br>
+                                    <input type="text" id="fullName" name="fullName" required><br>
+                                    <br>
+                                    <label for="nummer" id="nummerLabel">Telefoonnummer:</label><br>
+                                    <input type="tel" id="nummer" name="nummer" required><br>
+                                    <br>
+                                    <label for="company" id="companyLabel">Bedrijf:</label><br>
+                                    <input type="text" id="company" name="company" required>
+                                </td>
+                                <td>
+                                    <div class="textArea">
+                                        <label>Details:</label>
+                                        <div class="area">                                     
+                                            <textarea style="resize:none" name="details" cols="25" rows="6" id="details"></textarea>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                        <br>                   
+                <table class="inputtable">
+                    <tr>
+                        <td>
+                            <div class="problemBtn">
+                                <label for="problem">Probleem:</label><br>
+                                <select class="problemInput" name="problem" id="problem">
+                                    <option value="Audio">Audio</option>
+                                    <option value="Video">Video</option>
+                                    <option value="Lighting">Lighting</option>
+                                    <option value="Elektro">Elektro</option>
+                                </select>
+                            </div>
+                        </td>    
+                        <td>    
+                            <div class="urgentieBtn">
+                                <label for="urgentie">Urgentie:</label><br>
+                                <select class="urgentieInput" name="urgentie" id="urgentie">
+                                    <option value="Low">Laag</option>
+                                    <option value="Mid">Middel</option>
+                                    <option value="High">Hoog</option>
+                                </select>
+                            </div>
+                        </td>
+                        <td
+>
+                        <div class="submitBtn">
+                            <button type="submit" name="submit" id="Submit">Verstuur</button>
+                        </div>
+                        </td>
+                    </tr>
+                </table>      
+            </div>
+            
+        </form>
+        <br>
+        <br>
+        <div class="logotitle">
+            
+                <ul>
+                    <li>
+                        <img src="indexlogo.png">
+                    </li>   
+                    <li>
+                            <h1>Welcome to dEP service request</h1>
+                      </li>   
+                </ul>
+            
+              </div>
+      </body>
+    </body> 
+</html>    

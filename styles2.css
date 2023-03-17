@@ -1,0 +1,202 @@
+
+html{
+    width: 100%;
+    height: 100%;
+}
+body{  
+    color: white;
+    margin: 0px;
+    background: linear-gradient(to top right, rgb(3, 0, 56), rgb(6, 0, 117));
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+.option{
+    font-size: 3vw;
+}
+
+div.fillIn{
+    max-width: 85vw;
+}
+
+form{
+    margin-left: 3vw;
+    max-width: 85vw;
+}
+h1{
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    position: relative;
+    height: 100px;
+    width: 100%;
+    text-align: center;
+    padding: 0px 0px 0px 20px;
+    text-shadow: 0px 0px 30px rgb(0, 0, 0, 0.5);
+    
+   
+}
+
+img{
+    
+    position: relative;
+    height: 100px;
+    margin: 0px;
+    padding: 0px;
+    
+    
+}
+
+
+.logotitle{
+    background-color: rgb(255, 255, 255, 0.7);
+    position: relative;
+    background-size: cover;
+    margin: 0px;
+    width: 100%;
+    height: 100px;
+    box-shadow: 0px 0px 20px rgb(0, 0, 0, 0.5);
+
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-size: cover;
+    height: 100px;
+  }
+
+  li {
+    float: left;
+  }
+
+#fullNameLabel{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3vw;
+    text-shadow: 0px 0px 10px black;
+}
+
+#nummerLabel{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3vw;
+    text-shadow: 0px 0px 10px black;
+}
+
+#companyLabel{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3vw;
+    text-shadow: 0px 0px 10px black;
+}
+
+input{
+    
+    font-size: 3vw;
+    opacity: 50%;
+    box-shadow: 0px 0px 20px black;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+}
+
+.problemBtn{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3vw;
+    text-shadow: 0px 0px 10px black;
+}
+
+.problemInput{
+    font-size: 3vw;
+    box-shadow: 0px 0px 30px black;
+    opacity: 50%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+}
+
+.problemInput:focus,
+.problemInput:hover{
+    opacity: 90%;
+    box-shadow: 0px 0px 30px white;
+}
+#urgentie{
+    float: left;
+}
+.urgentieBtn{
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+   
+    font-size: 3vw;
+    text-shadow: 0px 0px 10px black; 
+    
+}
+
+.urgentieInput{    
+    font-size: 3vw;
+    box-shadow: 0px 0px 30px black;
+    opacity: 50%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;    
+    
+}
+
+.urgentieInput:focus,
+.urgentieInput:hover{
+    opacity: 90%;
+    box-shadow: 0px 0px 30px white;
+ }
+
+.textarea{ 
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    left: 5vw;
+    font-size: 3vw;
+    text-shadow: 0px 0px 10px black;
+}
+
+textarea#details{ 
+  
+    font-size: 3vw;
+    opacity: 50%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;  
+    box-shadow: 0px 0px 30px black;
+    
+}
+
+textarea#details:focus,
+textarea#details:hover {    
+    opacity: 90%;
+    box-shadow: 0px 0px 30px white;
+}
+
+table.inputtable{   
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+}
+
+#submit{
+    width: 10vw;
+    height: 5vw;
+    position:relative;
+    float: right;
+    top: 15px;
+    opacity: 90%;
+    background-color: rgb(0, 159, 227);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5vw;
+}
+
+#Submit:hover{
+    size: 120%;
+    opacity: 100%;
+    background-color: rgb(0, 171, 245);
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 0px 0px 10px white;
+}
+
+
